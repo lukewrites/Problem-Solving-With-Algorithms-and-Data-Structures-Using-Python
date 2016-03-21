@@ -14,6 +14,9 @@ class LogicGate:
 
 	def get_output(self):
 		self.output = self.perform_gate_logic()
+		# we do not define perform_gate_logic here because each logic gate
+		# does something different. It's ok to refer to something that will
+		# appear in child classes but doesn't exist in the parent class.
 		return self.output
 
 
@@ -26,7 +29,7 @@ class BinaryGate(LogicGate):
 		self.pinB = None
 
 	def get_pinA(self):
-		return int(input("Enter Pin A input for gate " 
+		return int(input("Enter Pin A input for gate "
 			+ self.get_label() + "--> "))
 
 	def get_pinB(self):
@@ -41,5 +44,5 @@ class UnaryGate(LogicGate):
 		self.pin = None
 
 	def get_pin(self):
-		return int(input("Enter Pin input for gate " + 
+		return int(input("Enter Pin input for gate " +
 			self.get_label + "-->"))
