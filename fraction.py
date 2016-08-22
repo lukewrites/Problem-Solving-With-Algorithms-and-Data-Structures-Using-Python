@@ -2,7 +2,6 @@ def gcd(m,n):
     while m%n != 0:
         oldm = m
         oldn = n
-
         m = oldn
         n = oldm%oldn
     return n
@@ -31,9 +30,8 @@ class Fraction:
      def __eq__(self, other):
          firstnum = self.num * other.den
          secondnum = other.num * self.den
-
          return firstnum == secondnum
-    
+
     def __mul__(self, other):
         new_num = self.num * other.num
         new_den = self.den * other.den
@@ -47,7 +45,9 @@ class Fraction:
         return Fraction(new_num//common, new_den//common)
 
     def __lt__(self, other):
-        pass
+        new_num = self.num * other.num
+        new_den = self.den * other.den
+        return (new_num > )
 
     def __gt__(self, other):
         pass
@@ -56,5 +56,5 @@ x = Fraction(1,2)
 y = Fraction(2,3)
 print(x+y)
 print(x == y)
-x * y
-x / y
+print(x * y)
+print(x / y)
